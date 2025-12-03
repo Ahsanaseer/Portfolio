@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { close, menu, logo, logotext } from '../assets';
+import { close, menu } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -20,27 +20,21 @@ const Navbar = () => {
             setActive('');
             window.scrollTo(0, 0);
           }}>
-          <img
-            src={logo} // your logo comes here
-            alt="logo"
-            className="sm:w-[50px] sm:h-[50px] w-[45px] h-[45px] object-contain"
-          />
-
-          {/* if you have text you want besides your logo it comes here.
-          Otherwise delete this if you don't need it. */}
-          <img
-            src={logotext}
-            alt="logo"
-            className="sm:w-[90px] sm:h-[90px] w-[85px] h-[85px] -ml-[0.6rem] object-contain"
-          />
+          <div className="flex flex-col">
+            <p className="text-eerieBlack text-[18px] font-bold cursor-pointer flex">
+              <span className="sm:block hidden">|</span>&nbsp;Ahsan Naseer
+            </p>
+            <p className="text-eerieBlack text-[10px] font-medium cursor-pointer">
+              Software Engineer
+            </p>
+          </div>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-14 mt-2">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.title ? 'text-french' : 'text-eerieBlack'
-              } hover:text-taupe text-[21px] font-medium font-mova 
+              className={`${active === nav.title ? 'text-french' : 'text-eerieBlack'
+                } hover:text-taupe text-[21px] font-medium font-mova 
                 uppercase tracking-[3px] cursor-pointer nav-links`}
               onClick={() => setActive(nav.title)}>
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -53,8 +47,7 @@ const Navbar = () => {
           {toggle ? (
             <div
               className={`p-6 bg-flashWhite opacity-[0.98] absolute 
-                top-0 left-0 w-screen h-[100vh] z-10 menu ${
-                  toggle ? 'menu-open' : 'menu-close'
+                top-0 left-0 w-screen h-[100vh] z-10 menu ${toggle ? 'menu-open' : 'menu-close'
                 }`}>
               <div className="flex justify-end">
                 <img
@@ -71,9 +64,8 @@ const Navbar = () => {
                   <li
                     id={nav.id}
                     key={nav.id}
-                    className={`${
-                      active === nav.title ? 'text-french' : 'text-eerieBlack'
-                    } text-[88px] font-bold font-arenq 
+                    className={`${active === nav.title ? 'text-french' : 'text-eerieBlack'
+                      } text-[88px] font-bold font-arenq 
                       uppercase tracking-[1px] cursor-pointer`}
                     onClick={() => {
                       setToggle(!toggle);

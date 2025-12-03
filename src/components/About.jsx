@@ -37,12 +37,11 @@ const About = () => {
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-taupe text-[18px] max-w-3xl leading-[30px]">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis
-        sapiente ipsum dolorum dicta eaque cumque inventore molestias, beatae ea
-        quaerat alias accusamus voluptas autem! Alias odit voluptates in totam
-        vitae dignissimos minus eaque culpa unde tempore dolore aperiam
-        obcaecati voluptatum aliquam corrupti, suscipit accusamus! Odit unde
-        veniam dolorum ipsum doloribus.
+        I'm a third-semester student at GIKI with a passion for software development.
+        My journey in web development has equipped me with a solid foundation in HTML, CSS, and JavaScript,
+        and I'm currently expanding my skills in React and Firebase. Beyond the web, I have experience with
+        C++, C, and Python, allowing me to approach problems with a versatile mindset.
+        I'm a quick learner and eager to collaborate on innovative solutions.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
