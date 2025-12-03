@@ -12,12 +12,7 @@ import {
   git,
   figma,
 
-  komikult,
-  leaderboard,
-  math,
-  movie,
-  nyeusi,
-  space,
+
   coverhunt,
   dcc,
   kelhel,

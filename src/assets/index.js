@@ -3,8 +3,7 @@ import nairobi from './backgrounds/nairobi.png';
 import whiteabstract from './backgrounds/white-abstract.png';
 import worldmap from './backgrounds/world-map.png';
 
-import logo from './logo/logo-black.png';
-import logotext from './logo/logo-text-black.png';
+
 
 import ahsan from './personal/shaq.png';
 
@@ -45,25 +44,20 @@ import dcc from './company/dcc.png';
 import kelhel from './company/kelhel.png';
 import microverse from './company/microverse.png';
 
-import komikult from './projects/komikult.png';
-import leaderboard from './projects/leaderboard.png';
-import math from './projects/math-magicians.png';
-import movie from './projects/movie-metro.png';
-import nyeusi from './projects/nyeusi.png';
-import space from './projects/space-hub.png';
+
+
 import spreading_smile from './projects/spreading_smile.png';
 import aa_construction from './projects/aa_construction.png';
 import pulse_chain from './projects/pulse_chain.png';
-import aeif_landing from './projects/aeif_landing.png';
-import gui_calculator from './projects/gui_calculator.png';
+import aeif_landing from './projects/aeif_landing.jpg';
+import gui_calculator from './projects/gui_calculator.jpg';
 
 export {
   bwmap,
   nairobi,
   whiteabstract,
   worldmap,
-  logo,
-  logotext,
+
   ahsan,
   backend,
   ux,
@@ -88,12 +82,7 @@ export {
   javascript,
   reactjs,
 
-  komikult,
-  leaderboard,
-  math,
-  movie,
-  nyeusi,
-  space,
+
   spreading_smile,
   aa_construction,
   pulse_chain,
