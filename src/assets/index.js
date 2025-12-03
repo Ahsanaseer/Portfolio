@@ -51,6 +51,11 @@ import math from './projects/math-magicians.png';
 import movie from './projects/movie-metro.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
+import spreading_smile from './projects/spreading_smile.png';
+import aa_construction from './projects/aa_construction.png';
+import pulse_chain from './projects/pulse_chain.png';
+import aeif_landing from './projects/aeif_landing.png';
+import gui_calculator from './projects/gui_calculator.png';
 
 export {
   bwmap,
@@ -89,6 +94,11 @@ export {
   movie,
   nyeusi,
   space,
+  spreading_smile,
+  aa_construction,
+  pulse_chain,
+  aeif_landing,
+  gui_calculator,
   coverhunt,
   dcc,
   kelhel,
