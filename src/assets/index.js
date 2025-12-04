@@ -12,6 +12,7 @@ import ux from './icons/ux.png';
 import frontend from './icons/frontend.png';
 import prototyping from './icons/prototyping.png';
 import github from './icons/github.png';
+import linkedin from './icons/linkedin.svg';
 import close from './icons/close.png';
 import download from './icons/download.png';
 import downloadHover from './icons/downloadHover.png';
@@ -64,6 +65,7 @@ export {
   frontend,
   prototyping,
   github,
+  linkedin,
   close,
   download,
   downloadHover,
