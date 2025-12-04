@@ -1,11 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { github, send, linkedin } from '../assets';
+import { fadeIn } from '../utils/motion';
 
 const Footer = () => {
     return (
         <footer className={`w-full bg-black py-10`}>
-            <div className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10`}>
+            <motion.div
+                variants={fadeIn("up", "spring", 0.5, 0.75)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10`}
+            >
 
                 {/* Brand Section */}
                 <div className="flex flex-col gap-4">
@@ -13,7 +21,7 @@ const Footer = () => {
                         M AHSAN NASEER
                     </p>
                     <p className="text-secondary text-[14px] max-w-[300px]">
-                        A passionate Software Engineer dedicated to building exceptional digital experiences.
+                        Crafted in React, polished with Tailwind CSS by Ahsan Naseer.
                     </p>
                 </div>
 
@@ -45,15 +53,21 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="w-full h-[1px] bg-tertiary my-8 max-w-7xl mx-auto" />
 
-            <div className={`${styles.paddingX} max-w-7xl mx-auto flex justify-between items-center`}>
+            <motion.div
+                variants={fadeIn("up", "spring", 0.75, 0.75)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                className={`${styles.paddingX} max-w-7xl mx-auto flex justify-between items-center`}
+            >
                 <p className="text-secondary text-[14px] font-poppins">
                     &copy; {new Date().getFullYear()} Ahsan Naseer. All Rights Reserved.
                 </p>
-            </div>
+            </motion.div>
         </footer>
     );
 };

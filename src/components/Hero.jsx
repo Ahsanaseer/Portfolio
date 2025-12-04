@@ -41,8 +41,8 @@ const Hero = () => {
               <span
                 className="sm:text-battleGray sm:text-[90px] 
                 text-eerieBlack text-[50px] font-mova
-                font-extrabold uppercase whitespace-nowrap">
-                Ahsan Naseer
+                font-extrabold uppercase lg:whitespace-nowrap">
+                Ahsan <br className="lg:hidden" /> Naseer
               </span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
