@@ -3576,9 +3576,9 @@ No matching component was found for:
               ease-in-out`,onClick:()=>window.open("resume link","_blank"),onMouseOver:()=>{document.querySelector(".download-btn").setAttribute("src",Pj)},onMouseOut:()=>{document.querySelector(".download-btn").setAttribute("src",AC)},children:["MY RESUME",re.jsx("img",{src:AC,alt:"download",className:`download-btn sm:w-[26px] sm:h-[26px] \r
                 w-[23px] h-[23px] object-contain`})]})})]})})]}),P9=Sh(b9,"work"),R9=({id:n,name:e,description:t,image:i,repo:r,demo:s,index:o,active:a,handleClick:u})=>re.jsxs(fr.div,{variants:Tg("right","spring",o*.5,.75),className:`relative ${a===n?"lg:flex-[3.5] flex-[10]":"lg:flex-[0.5] flex-[2]"} flex items-center justify-center min-w-[170px] 
       h-[420px] cursor-pointer card-shadow`,onClick:()=>u(n),children:[re.jsx("div",{className:`absolute top-0 left-0 z-10 bg-jetLight \r
-      h-full w-full opacity-[0.5] rounded-[24px]`}),re.jsx("img",{src:i,alt:e,className:"absolute w-full h-full object-cover rounded-[24px]"}),a!==n?re.jsx("div",{className:"flex items-center justify-start pr-[4.5rem]",children:re.jsx("h3",{className:`font-extrabold font-beckman uppercase w-full h-[30px] \r
+      h-full w-full opacity-[0.5] rounded-[24px]`}),re.jsx("img",{src:i,alt:e,className:"absolute w-full h-full object-cover rounded-[24px]"}),a!==n?re.jsx("div",{className:"flex items-center justify-start pr-[4.5rem]",children:re.jsx("h3",{className:`font-extrabold font-beckman uppercase w-[200px] h-[30px] \r
         whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]\r
-        absolute z-0 lg:bottom-[2rem] lg:rotate-[-90deg] lg:origin-[0,0]\r
+        absolute z-0 lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]\r
         leading-none z-20`,children:e})}):re.jsx(re.Fragment,{children:re.jsxs("div",{className:`absolute bottom-0 p-8 justify-start w-full \r
             flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20`,children:[re.jsx("div",{className:"absolute inset-0 flex justify-end m-3",children:re.jsx("div",{onClick:()=>window.open(r,"_blank"),className:`bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full \r
                   flex justify-center items-center cursor-pointer\r
