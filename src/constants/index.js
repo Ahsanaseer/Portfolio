@@ -149,7 +149,7 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'Spreading Smile Foundation',
+    name: 'Spreading Smile',
     description: 'An NGO website dedicated to helping children and the community.',
     tags: [
       {
