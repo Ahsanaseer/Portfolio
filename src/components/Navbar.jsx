@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { close, menu } from '../assets';
+import { close, menu, logotext } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -20,13 +20,12 @@ const Navbar = () => {
             setActive('');
             window.scrollTo(0, 0);
           }}>
-          <div className="flex flex-col">
-            <p className="text-eerieBlack text-[18px] font-bold cursor-pointer flex">
-              <span className="sm:block hidden">|</span>&nbsp;Ahsan Naseer
-            </p>
-            <p className="text-eerieBlack text-[10px] font-medium cursor-pointer">
-              Software Engineer
-            </p>
+          <div className="relative w-9 h-9">
+            <img
+              src={logotext}
+              alt="logo"
+              className="w-36 h-36 object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[9rem] min-h-[9rem]"
+            />
           </div>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-14 mt-2">

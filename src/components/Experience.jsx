@@ -2,12 +2,15 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import 'react-vertical-timeline-component/style.min.css';
 import { styles } from '../styles';
 import { experiences } from '../constants';
 import { SectionWrapper } from '../hoc';
-import { download, downloadHover, resume } from '../assets';
+
+import { download, downloadHover, resume, close } from '../assets';
 import { textVariant } from '../utils/motion';
 
 const ExperienceCard = ({ experience }) => (
@@ -52,8 +55,98 @@ const ExperienceCard = ({ experience }) => (
 );
 
 const Experience = () => {
+  const [showResume, setShowResume] = useState(false);
+  const [zoom, setZoom] = useState(60); // Default zoomed out to 60%
+
+  const handleZoomIn = () => {
+    setZoom((prev) => Math.min(prev + 10, 100)); // Max 100%
+  };
+
+  const handleZoomOut = () => {
+    setZoom((prev) => Math.max(prev - 10, 40)); // Min 40%
+  };
+
   return (
     <>
+      {/* Resume Modal */}
+      {showResume &&
+        createPortal(
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90 overflow-hidden">
+            <div
+              className="relative flex flex-col items-center transition-all duration-300 ease-in-out"
+              style={{ width: `${zoom}%`, height: '90vh' }}>
+              {/* Toolbar */}
+              <div className="flex justify-between items-center w-full p-2 bg-jetLight rounded-t-lg border-b border-gray-700">
+                <h3 className="text-white text-[18px] font-bold font-beckman pl-2">
+                  My Resume
+                </h3>
+
+                <div className="flex items-center gap-4">
+                  {/* Zoom Controls */}
+                  <div className="flex bg-eerieBlack rounded-lg p-1 gap-2">
+                    <button
+                      onClick={handleZoomOut}
+                      className="text-white hover:text-timberWolf px-2 font-bold text-xl"
+                      title="Zoom Out">
+                      -
+                    </button>
+                    <span className="text-gray-400 text-sm flex items-center select-none">
+                      {zoom}%
+                    </span>
+                    <button
+                      onClick={handleZoomIn}
+                      className="text-white hover:text-timberWolf px-2 font-bold text-xl"
+                      title="Zoom In">
+                      +
+                    </button>
+                  </div>
+
+                  {/* Separator */}
+                  <div className="w-[1px] h-6 bg-gray-600"></div>
+
+                  {/* Action Buttons */}
+                  <button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = '/resume.pdf';
+                      link.download = 'resume.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    className="hover:bg-onyx p-2 rounded-full transition-colors"
+                    title="Download">
+                    <img
+                      src={download}
+                      alt="download"
+                      className="w-[20px] h-[20px] object-contain"
+                    />
+                  </button>
+
+                  <button
+                    onClick={() => setShowResume(false)}
+                    className="hover:bg-onyx p-2 rounded-full transition-colors"
+                    title="Close">
+                    <img
+                      src={close}
+                      alt="close"
+                      className="w-[20px] h-[20px] object-contain"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <iframe
+                src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                className="w-full h-full bg-white rounded-b-lg"
+                title="Resume"
+              />
+            </div>
+          </div>,
+          document.body
+        )}
+
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} sm:pl-16 pl-[2rem]`}>
           What I've done so far
@@ -100,12 +193,7 @@ const Experience = () => {
               sm:mt-[22px] mt-[16px] hover:bg-battleGray 
               hover:text-eerieBlack transition duration-[0.2s] 
               ease-in-out"
-              onClick={() =>
-                window.open(
-                  'https://1drv.ms/b/c/ac8420686f80225d/IQDz5tEdtWPiR7XYRnNB9lMwAYPipDQrdcD9x5AoE74btB0?e=FSCUDt', //paste the link to your resume here
-                  '_blank'
-                )
-              }
+              onClick={() => setShowResume(true)}
               onMouseOver={() => {
                 document
                   .querySelector('.download-btn')

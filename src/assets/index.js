@@ -6,6 +6,7 @@ import worldmap from './backgrounds/world-map.png';
 
 
 import ahsan from './personal/shaq.png';
+import logotext from './personal/A logo.png';
 
 import backend from './icons/backend.png';
 import ux from './icons/ux.png';
@@ -58,6 +59,7 @@ export {
   nairobi,
   whiteabstract,
   worldmap,
+  logotext,
 
   ahsan,
   backend,
