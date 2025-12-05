@@ -73,15 +73,15 @@ const Experience = () => {
         createPortal(
           <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90 overflow-hidden">
             <div
-              className="relative flex flex-col items-center transition-all duration-300 ease-in-out"
+              className="relative flex flex-col items-center transition-all duration-300 ease-in-out min-w-[95%] sm:min-w-0"
               style={{ width: `${zoom}%`, height: '90vh' }}>
               {/* Toolbar */}
               <div className="flex justify-between items-center w-full p-2 bg-jetLight rounded-t-lg border-b border-gray-700">
-                <h3 className="text-white text-[18px] font-bold font-beckman pl-2">
+                <h3 className="text-white text-[18px] font-bold font-beckman pl-2 hidden xs:block">
                   My Resume
                 </h3>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 sm:gap-4">
                   {/* Zoom Controls */}
                   <div className="flex bg-eerieBlack rounded-lg p-1 gap-2">
                     <button
