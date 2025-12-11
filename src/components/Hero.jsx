@@ -1,10 +1,13 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import VariableProximity from './VariableProximity';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import { ahsan, bwmap, worldmap } from '../assets';
 
 const Hero = () => {
+  const containerRef = useRef(null);
+
   return (
     <>
       <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
@@ -34,7 +37,7 @@ const Hero = () => {
             <div className="w-1 sm:h-80 h-40 bw-gradient sm:hidden" />
           </div>
 
-          <div>
+          <div ref={containerRef} style={{ position: 'relative' }}>
             <h1
               className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}>
               Hi, I'm{' '}
@@ -42,7 +45,25 @@ const Hero = () => {
                 className="sm:text-battleGray sm:text-[90px] 
                 text-eerieBlack text-[50px] font-mova
                 font-extrabold uppercase lg:whitespace-nowrap">
-                Ahsan <br className="lg:hidden" /> Naseer
+                <VariableProximity
+                  label={'Ahsan'}
+                  className={'variable-proximity-demo'}
+                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  containerRef={containerRef}
+                  radius={100}
+                  falloff='linear'
+                />
+                <br className="lg:hidden" />
+                <VariableProximity
+                  label={'Naseer'}
+                  className={'variable-proximity-demo'}
+                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  containerRef={containerRef}
+                  radius={100}
+                  falloff='linear'
+                />
               </span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
